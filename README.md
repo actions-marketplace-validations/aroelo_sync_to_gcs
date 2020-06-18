@@ -6,7 +6,7 @@ If the bucket matches the pattern 'bucket_pattern-prod' it will sync the master 
 
 Requirements:
 - An existing empty gcs bucket with an unique pattern that will be dedicated to only contain the git repository.  
-WARNING: It will sync the github repository, so any existing files in the bucket that aren't in the github repository will be deleted!
+**WARNING: It will sync the github repository, so any existing files in the bucket that aren't in the github repository will be deleted!**
 - A service account with access to the bucket.
 - Key in json format to this service account.
 
