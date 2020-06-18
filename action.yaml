@@ -1,0 +1,21 @@
+name: Sync to GCS
+description: sync Google Cloud Storage bucket with git repo folder
+inputs:
+  secrets:
+    description: json key of google credentials that can modify storage bucket
+    required: true
+  bucket_suffix:
+    description: Which bucket, either 'dev' or 'prod'
+    required: true
+  bucket_pattern:
+    description: Pattern to select bucket with
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.bucket_pattern }}
+    - ${{ inputs.bucket_suffix }}
+branding:
+  icon: archive
